@@ -79,19 +79,19 @@ hypothesis(unknown). % unknown
 tootsie_pops:- fruity,
 		hard,
 		lollipop,
-         	verify_if('known to count how many licks does it take to get to the center').	
+         	verify_if('count how many licks does it take to get to the center').	
 blow_pops:- fruity, 
 	    hard,
 	    lollipop,
-	    verify_if('able to become bubble gum').
+	    verify_if('have the ability become bubble gum').
 dum_dums:-  fruity,
 	    hard,
 	    lollipop,
-	    verify_if('the same name as a red velvet song').
+	    verify_if('have the same name as a red velvet song').
 lifesavers:- fruity,
 	     hard,
              hard_candy,
-	     verify_if('this candy can save your life'). 
+	     verify_if('have the ability save your life'). 
 jolly_ranchers :- fruity,
 	 	  hard,
 	          hard_candy,
@@ -99,11 +99,11 @@ jolly_ranchers :- fruity,
 warheads:-  fruity,
 	    hard,
 	    hard_candy,
- 	    verify_if('extreme'). 
+ 	    verify_if('taste extreme'). 
 sour_patch:- fruity,
 	     soft,
 	     gummies,
-             verify_if('first sour then theyre sweet').
+             verify_if('first taste sour then theyre sweet').
 nerd_clusters:- fruity,
 	   	soft,
            	gummies,
@@ -123,7 +123,6 @@ skittles:- fruity,
 laffy_taffy :- fruity,
 	       soft,
 	       chews,
-               verify_if('chews'),
 	       verify_if('has the worst flavor --banana').
 milkchocolate:- chocolate,
                 plain,
