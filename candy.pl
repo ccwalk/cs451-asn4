@@ -185,5 +185,5 @@ withinclusions     :- verify_if_not('have an air of simple and sophisticated vib
 sweet              :- verify_if('tend to be chosen by people with a sweet tooth').
 savory             :- verify_if_not('tend to be chosen by people with a sweet tooth'), !.
 nuts               :- verify_if('contain nuts').
-nonuts             :- verify_if_not('contain nuts').
+nonuts             :- verify_if_not('contain nuts'), !.
 
