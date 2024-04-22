@@ -112,8 +112,8 @@ york:- chocolate,
 /* Classification rules shared by many candies */
 chocolate          :- verify_if('contain chocolate'), !.
 fruity             :- verify_if('have fruity flavor'), !.
-plain              :- verify_if('like simplicity').
-withinclusions     :- verify_if_not('like simplicity'), !.
+plain              :- verify_if('have an air of simplicity and sophistication').
+withinclusions     :- verify_if_not('have an air of simplicity and sophistication'), !.
 sweet              :- verify_if('tend to be chosen by people with a sweet tooth').
 savory             :- verify_if_not('tend to be chosen by people with a sweet tooth'), !. 
 nuts               :- verify_if('contain nuts').
