@@ -1,3 +1,9 @@
+/**
+ *Programmers: Emma Smith and Callie Walker
+ *Assignment: 4, Prolog
+ *Topic: Candy
+ */
+
 start :- hypothesis(Candy),
       write('I think the candy is '), % Adapt this text to your domain
       write(Candy),
@@ -58,6 +64,15 @@ hypothesis('gummy bears') :- gummy_bears, !.
 hypothesis('starburst') :- starburst, !.
 hypothesis('skittles'):- skittles, !.
 hypothesis('laffy taffy') :- laffy_taffy, !.
+hypothesis("a hershey's milk chocolate bar")   :- milkchocolate, !.
+hypothesis('a white chocolate bar')   :- whitechocolate, !.
+hypothesis('a dark chocolate bar')     :- darkchocolate, !.
+hypothesis("a snicker's bar")   :- snickers, !.
+hypothesis("a reese's bar")     :- reeses, !.
+hypothesis('a peanut chews bar')    :- peanutchews, !.
+hypothesis('a crunch bar')   :- crunch, !.
+hypothesis('a kit kat')   :- kitkat, !.
+hypothesis('a york peppermint patty') :- york, !.
 hypothesis(unknown). % unknown
 
 /* Candy identification rules   */
