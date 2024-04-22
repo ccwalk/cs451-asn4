@@ -64,7 +64,7 @@ hypothesis(unknown). % unknown
 milkchocolate:- chocolate,
 		plain,
 		sweet,
-		verify_if('have a lighter brown color').
+		verify_if_not('have a white color').
 
 whitechocolate:- chocolate,
 		 plain,
@@ -113,9 +113,9 @@ york:- chocolate,
 chocolate          :- verify_if('contain chocolate'), !.
 fruity             :- verify_if('have fruity flavor'), !.
 plain              :- verify_if('like simplicity').
-withinclusions     :- verify_if('think it is best when accompanied by others'), !.
+withinclusions     :- verify_if_not('like simplicity'), !.
 sweet              :- verify_if('tend to be chosen by people with a sweet tooth').
-savory             :- verify_if('have an air of sophistication'), !. 
+savory             :- verify_if_not('tend to be chosen by people with a sweet tooth'), !. 
 nuts               :- verify_if('contain nuts').
 nonuts             :- verify_if_not('contain nuts').
 
