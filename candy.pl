@@ -44,76 +44,80 @@ undo :- retract(yes(_)),fail.
 undo :- retract(no(_)),fail.
 undo.
 
-/* hypotheses to be tested, 
- when changing this code to other domains (music, serie, etc) 
- modify the rules bellow. */
+/* hypotheses to be tested,  when changing this code to other domains (music, serie, etc) modify the rules bellow. */
 
+hypothesis('tootsie pops')   :- tootsie_pops, !.
+hypothesis('blow pops')   :- blow_pops, !.
+hypothesis('dum dums')     :- dum_dums, !.
+hypothesis('lifesavers')   :- lifesavers, !.
+hypothesis('jolly ranchers')     :- jolly_ranchers, !.
+hypothesis('warheads')    :- warheads, !.
 hypothesis('sour patch')   :- sour_patch, !.
-hypothesis('sour worms')   :- sour_worms, !.
-hypothesis('a tiger')     :- tiger, !.
-hypothesis('a giraffe')   :- giraffe, !.
-hypothesis('a zebra')     :- zebra, !.
-hypothesis('a horse')    :- horse, !.
-hypothesis('a penguim')   :- penguin, !.
-hypothesis('an ostrich')   :- ostrich, !.
-hypothesis('a turkey') :- turkey, !.
-hypothesis('a vulture') :- vulture, !.
-hypothesis('a crow'):- crow, !.
+hypothesis('nerd clusters')   :- nerd_clusters, !.
+hypothesis('gummy bears') :- gummy_bears, !.
+hypothesis('starburst') :- starburst, !.
+hypothesis('skittles'):- skittles, !.
+hypothesis('laffy taffy') :- laffy_taffy, !.
 hypothesis(unknown). % unknown
 
 /* Candy identification rules   */
-sour_patch :- sour, 
-           gummies, 
-	   fruity,
-           verify_if('first theyre sour then theyre sweet'),
-           verify_if('has a m').
-sour_worms :- mammal, 
-           carnivore, 
-           verify_if('has yellow/orange fur'),
-           verify_if('has black spots').
-lemon_drops :- mammal,  
-         carnivore,
-         verify_if('has yellow/orange fur'),
-         verify_if('has black stripes').
-air_heads :- ungulate, 
-           verify_if('has a long neck'), 
-           verify_if('has long legs').
-jawbreakers :- ungulate,  
-         verify_if_not('has a long neck'), 
-         verify_if('has black stripes').
-spinners :- ungulate,
-         verify_if_not('has a long neck'), 
-         verify_if_not('has black stripes').
-red_white_twists :- bird,
-           verify_if_not('fly'), 
-           verify_if('has stared in a animated movie and tv series').
-werthers :- bird,  
-           verify_if_not('fly'), 
-           verify_if('has a long neck').
-dum_dums :- bird, 
-        verify_if_not('fly'),
-        verify_if('attended the first thanksgiving dinner').
-tootsie_pops :- bird,
-         verify_if('fly'),
-         verify_if('carrion'),
-         verify_if('has a long neck').
-crow :- bird,
-         verify_if('fly'),
-         verify_if('carrion'),
-         verify_if_not('has a long neck').
+tootsie_pops:- fruity,
+		hard,
+		lollipop,
+         	verify_if('known to count how many licks does it take to get to the center').	
+blow_pops:- fruity, 
+	    hard,
+	    lollipop,
+	    verify_if('able to become bubble gum').
+dum_dums:-  fruity,
+	    hard,
+	    lollipop,
+	    verify_if('the same name as a red velvet song').
+lifesavers:- fruity,
+	     hard,
+             hard_candy,
+	     verify_if('have holes'). 
+jolly_ranchers :- fruity,
+	 	  hard,
+	          hard_candy,
+ 	 	  verify_if('have a name that is synonymous with happy farmers').
+warheads:-  fruity,
+	    hard,
+	    hard_candy,
+ 	    verify_if('extreme'). 
+sour_patch:- fruity,
+	     soft,
+	     gummies,
+             verify_if('first sour then theyre sweet').
+nerd_clusters:- fruity,
+	   	soft,
+           	gummies,
+   	   	verify_if('have tiny multicolored candies known for being nerdy').
+gummy_bears:- fruity,
+	      soft,
+	      gummies,
+	      verify_if('belong in the happy world of Haribo').
+starburst:- fruity,
+	    soft,
+            chews,
+            verify_if('taste unexplainably juicy').
+skittles:- fruity,
+	   soft,
+	   chews,
+	   verify_if('taste like a rainbow').
+laffy_taffy :- fruity,
+	       soft,
+	       chews,
+               verify_if('chews'),
+	       verify_if('has the worst flavor --banana').
+/* Classification rules shared by many candy */
 
-/* Classification rules shared by many animals */
-hard_candy    :- verify_if('has fur or hair'), !.
-hard_candy    :- verify_if('give milk').
-gummies      :- verify_if('chewy'), !.
-gummies      :- verify_if('lay eggs').
-fruity	     :- verify_if(' ') !.
-chocolate :- verify_if('eats meat'), !.
-sour  :- verify_if('has sharp teeth'), 
-             verify_if('has forward eyes').
-sweet :- mammal, 
-            verify_if('has hooves').
-salty :- verify_if(''), !.
-savory :- verify_if(''), !.
-caramel :- verify_if(''), !.
-bubble_gum :- verify_if(''), !.
+fruity    		:- verify_if('have a fruity flavor').
+hard    		:- verify_if('make teeth hurt when biting it').
+soft		 	:- verify_if_not('make teeth hurt when biting it').
+lollipop 		:- verify_if('come with a stick').
+hard_candy 		:- verify_if_not('come with a stick').
+gummies 		:- verify_if('squish easily').	
+chews 			:- verify_if_not('squish easily').
+
+
