@@ -110,14 +110,66 @@ laffy_taffy :- fruity,
 	       chews,
                verify_if('chews'),
 	       verify_if('has the worst flavor --banana').
+milkchocolate:- chocolate,
+                plain,
+                sweet,
+                verify_if_not('have a white color').
+
+whitechocolate:- chocolate,
+                 plain,
+                 sweet,
+                 verify_if('have a white color').
+
+darkchocolate:- chocolate,
+                plain,
+                savory.
+
+snickers:- chocolate,
+           withinclusions,
+           nuts,
+           verify_if("have a name that's also a type of chuckle").
+
+reeses:- chocolate,
+         withinclusions,
+         nuts,
+         verify_if('have a name that people pronounce incorrectly to make it rhyme').
+
+peanutchews:- chocolate,
+              withinclusions,
+              nuts,
+              verify_if('also have molasses').
+
+crunch:- chocolate,
+         withinclusions,
+         nonuts,
+         verify_if("have a name after the sound made when you take a bite").
+
+kitkat:- chocolate,
+         withinclusions,
+         nonuts,
+         verify_if('have a history with Kourtney Kardashian').
+
+york:- chocolate,
+       withinclusions,
+       nonuts,
+       verify_if("have a minty flavor").
+
+
 /* Classification rules shared by many candy */
 
-fruity    		:- verify_if('have a fruity flavor').
-hard    		:- verify_if('make teeth hurt when biting it').
-soft		 	:- verify_if_not('make teeth hurt when biting it').
-lollipop 		:- verify_if('come with a stick').
-hard_candy 		:- verify_if_not('come with a stick').
-gummies 		:- verify_if('squish easily').	
-chews 			:- verify_if_not('squish easily').
+fruity    	   :- verify_if('have a fruity flavor').
+hard    	   :- verify_if('make teeth hurt when biting it').
+soft		   :- verify_if_not('make teeth hurt when biting it').
+lollipop 	   :- verify_if('come with a stick').
+hard_candy 	   :- verify_if_not('come with a stick').
+gummies 	   :- verify_if('squish easily').	
+chews 		   :- verify_if_not('squish easily').
 
+chocolate          :- verify_if('contain chocolate'), !.
+plain              :- verify_if('have an air of simplicity and sophistication').
+withinclusions     :- verify_if_not('have an air of simplicity and sophistication'), !.
+sweet              :- verify_if('tend to be chosen by people with a sweet tooth').
+savory             :- verify_if_not('tend to be chosen by people with a sweet tooth'), !.
+nuts               :- verify_if('contain nuts').
+nonuts             :- verify_if_not('contain nuts').
 
