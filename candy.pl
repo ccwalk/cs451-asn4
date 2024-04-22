@@ -1,13 +1,13 @@
-start :- hypothesis(Animal),
-      write('I think the animal is '), % Adapt this text to your domain
-      write(Animal),
+start :- hypothesis(Candy),
+      write('I think the candy is '), % Adapt this text to your domain
+      write(Candy),
 	  write('.'),
       nl,
       undo.
 
 /* how to ask questions */
 ask(P) :-
-    write('Does the Animal '), % Adapt this text to your domain
+    write('Does the candy '), % Adapt this text to your domain
     write(P),
     write('? '),
     read(Answer),
@@ -16,7 +16,7 @@ ask(P) :-
 
 /* how to ask questions and verify if not */
 ask_no(P) :-
-    write('Does the Animal '),  % Adapt this text to your domain
+    write('Does the candy '),  % Adapt this text to your domain
     write(P),
     write('? '),
     read(Answer),
@@ -48,8 +48,8 @@ undo.
  when changing this code to other domains (music, serie, etc) 
  modify the rules bellow. */
 
-hypothesis('a lion')   :- lion, !.
-hypothesis('a jaguar')   :- jaguar, !.
+hypothesis('sour patch')   :- sour_patch, !.
+hypothesis('sour worms')   :- sour_worms, !.
 hypothesis('a tiger')     :- tiger, !.
 hypothesis('a giraffe')   :- giraffe, !.
 hypothesis('a zebra')     :- zebra, !.
@@ -61,38 +61,39 @@ hypothesis('a vulture') :- vulture, !.
 hypothesis('a crow'):- crow, !.
 hypothesis(unknown). % unknown
 
-/* Animal identification rules   */
-lion :- mammal, 
-           carnivore, 
-           verify_if('has yellow/orange fur'),
-           verify_if('has a mane').
-jaguar :- mammal, 
+/* Candy identification rules   */
+sour_patch :- sour, 
+           gummies, 
+	   fruity,
+           verify_if('first theyre sour then theyre sweet'),
+           verify_if('has a m').
+sour_worms :- mammal, 
            carnivore, 
            verify_if('has yellow/orange fur'),
            verify_if('has black spots').
-tiger :- mammal,  
+lemon_drops :- mammal,  
          carnivore,
          verify_if('has yellow/orange fur'),
          verify_if('has black stripes').
-giraffe :- ungulate, 
+air_heads :- ungulate, 
            verify_if('has a long neck'), 
            verify_if('has long legs').
-zebra :- ungulate,  
+jawbreakers :- ungulate,  
          verify_if_not('has a long neck'), 
          verify_if('has black stripes').
-horse :- ungulate,
+spinners :- ungulate,
          verify_if_not('has a long neck'), 
          verify_if_not('has black stripes').
-penguin :- bird,
+red_white_twists :- bird,
            verify_if_not('fly'), 
            verify_if('has stared in a animated movie and tv series').
-ostrich :- bird,  
+werthers :- bird,  
            verify_if_not('fly'), 
            verify_if('has a long neck').
-turkey :- bird, 
+dum_dums :- bird, 
         verify_if_not('fly'),
         verify_if('attended the first thanksgiving dinner').
-vulture :- bird,
+tootsie_pops :- bird,
          verify_if('fly'),
          verify_if('carrion'),
          verify_if('has a long neck').
@@ -102,12 +103,17 @@ crow :- bird,
          verify_if_not('has a long neck').
 
 /* Classification rules shared by many animals */
-mammal    :- verify_if('has fur or hair'), !.
-mammal    :- verify_if('give milk').
-bird      :- verify_if('has feathers'), !.
-bird      :- verify_if('lay eggs').
-carnivore :- verify_if('eats meat'), !.
-carnivore :- verify_if('has sharp teeth'), 
+hard_candy    :- verify_if('has fur or hair'), !.
+hard_candy    :- verify_if('give milk').
+gummies      :- verify_if('chewy'), !.
+gummies      :- verify_if('lay eggs').
+fruity	     :- verify_if(' ') !.
+chocolate :- verify_if('eats meat'), !.
+sour  :- verify_if('has sharp teeth'), 
              verify_if('has forward eyes').
-ungulate :- mammal, 
+sweet :- mammal, 
             verify_if('has hooves').
+salty :- verify_if(''), !.
+savory :- verify_if(''), !.
+caramel :- verify_if(''), !.
+bubble_gum :- verify_if(''), !.
