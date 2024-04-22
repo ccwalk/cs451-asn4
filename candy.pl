@@ -123,7 +123,7 @@ skittles:- fruity,
 laffy_taffy :- fruity,
 	       soft,
 	       chews,
-	       verify_if('has the worst flavor --banana').
+	       verify_if('have the worst flavor --banana').
 milkchocolate:- chocolate,
                 plain,
                 sweet,
@@ -171,17 +171,17 @@ york:- chocolate,
 
 /* Classification rules shared by many candy */
 
-fruity    	   :- verify_if('have a fruity flavor').
+fruity    	   :- verify_if_not('contain chocolate'), !.
 hard    	   :- verify_if('make teeth hurt when biting it').
-soft		   :- verify_if_not('make teeth hurt when biting it').
+soft		   :- verify_if_not('make teeth hurt when biting it'), !.
 lollipop 	   :- verify_if('come with a stick').
-hard_candy 	   :- verify_if_not('come with a stick').
+hard_candy 	   :- verify_if_not('come with a stick'), !.
 gummies 	   :- verify_if('squish easily').	
 chews 		   :- verify_if_not('squish easily').
 
 chocolate          :- verify_if('contain chocolate'), !.
-plain              :- verify_if('have an air of simplicity and sophistication').
-withinclusions     :- verify_if_not('have an air of simplicity and sophistication'), !.
+plain              :- verify_if('have an air of simple and sophisticated vibe').
+withinclusions     :- verify_if_not('have an air of simple and sophisticated vibe'), !.
 sweet              :- verify_if('tend to be chosen by people with a sweet tooth').
 savory             :- verify_if_not('tend to be chosen by people with a sweet tooth'), !.
 nuts               :- verify_if('contain nuts').
