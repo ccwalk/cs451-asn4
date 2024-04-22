@@ -180,8 +180,8 @@ gummies 	   :- verify_if('squish easily').
 chews 		   :- verify_if_not('squish easily').
 
 chocolate          :- verify_if('contain chocolate'), !.
-plain              :- verify_if('have an air of simple and sophisticated vibe').
-withinclusions     :- verify_if_not('have an air of simple and sophisticated vibe'), !.
+plain              :- verify_if('have a simple and sophisticated vibe').
+withinclusions     :- verify_if_not('have a simple and sophisticated vibe'), !.
 sweet              :- verify_if('tend to be chosen by people with a sweet tooth').
 savory             :- verify_if_not('tend to be chosen by people with a sweet tooth'), !.
 nuts               :- verify_if('contain nuts').
